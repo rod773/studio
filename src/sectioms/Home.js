@@ -3,11 +3,18 @@ import styled from "styled-components";
 
 const Section = styled.section`
   position: relative;
-  min-height: 100vh;
+  min-height: 200vh;
+  overflow: hidden;
 `;
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Section>
+      <i>Video</i>
+      <i>Logo</i>
+      <i>NavBar</i>
+    </Section>
+  );
 };
 
 export default Home;
