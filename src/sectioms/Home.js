@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CoverVideo } from "./../components/CoverVideo";
 
 const Section = styled.section`
   position: relative;
@@ -10,9 +11,9 @@ const Section = styled.section`
 const Home = () => {
   return (
     <Section>
-      <i>Video</i>
-      <i>Logo</i>
-      <i>NavBar</i>
+      <CoverVideo />
+      <h1>Logo</h1>
+      <h1>NavBar</h1>
     </Section>
   );
 };
