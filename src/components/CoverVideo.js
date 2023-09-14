@@ -69,8 +69,8 @@ const container = {
     opacity: 1,
 
     transition: {
-      duration: 2,
-      ease: "easeInOut",
+      delayChildren: 2,
+      staggerChildren: 0.3,
     },
   },
 };
@@ -90,38 +90,38 @@ export const CoverVideo = () => {
       <DarkOverlay />
       <Title variants={container} initial="hidden" animate="show">
         <div>
-          <h1
+          <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.13"
             data-scroll-speed="4"
           >
             W
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.09"
             data-scroll-speed="4"
           >
             i
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.06"
             data-scroll-speed="4"
           >
             b
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.04"
             data-scroll-speed="4"
           >
             e
-          </h1>
+          </motion.h1>
         </div>
         <h2
           variants={item}
