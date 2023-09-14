@@ -8,7 +8,7 @@ export const dark = {
 
   fontxs: "0.75em",
   fontsm: "0.875em",
-  fontxmd: "1em",
+  fontmd: "1em",
   fontlg: "1.25em",
   fontxl: "2em",
   fontxxl: "3em",
