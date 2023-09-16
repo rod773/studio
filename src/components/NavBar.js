@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Home from "./../sectioms/Home";
+import { motion } from "framer-motion";
 
-const NavContainer = styled.div`
+const NavContainer = styled(motion.div)`
   width: 100vw;
   z-index: 6;
   position: absolute;
 
-  top: ${(props) => (props.click ? "0" : "-" + props.theme.navHeight)};
+  top: ${(props) => (props.click ? "0" : "-".concat(props.theme.navHeight))};
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: all 0.3s ease;
 `;
 
-const MenuItems = styled.ul`
+const MenuItems = styled(motion.ul)`
   position: relative;
   height: ${(props) => props.theme.navHeight};
   background-color: ${(props) => props.theme.body};
@@ -49,7 +51,7 @@ const MenuBtn = styled.li`
   cursor: pointer;
 `;
 
-const MenuItem = styled.li`
+const MenuItem = styled(motion.li)`
   text-transform: uppercase;
   color: ${(props) => props.theme.text};
 `;
@@ -59,8 +61,28 @@ export const NavBar = () => {
 
   return (
     <div>
-      <NavContainer click={click}>
-        <MenuItems>
+      <NavContainer
+        click={click}
+        initial={{
+          y: "-100%",
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{
+          duration: 2,
+          delay: 2,
+        }}
+      >
+        <MenuItems
+          drag="y"
+          dragConstraints={{
+            top: 0,
+            bottom: 70,
+          }}
+          dragElastic={0.05}
+          dragSnapToOrigin
+        >
           <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
           <MenuItem>Home</MenuItem>
           <MenuItem>about</MenuItem>
