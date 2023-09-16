@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Home from "./../sectioms/Home";
 
@@ -6,10 +6,25 @@ const NavContainer = styled.div`
   width: 100vw;
   z-index: 6;
   position: absolute;
-  top: 0;
+
+  top: ${(props) => (props.click ? "0" : "-" + props.theme.navHeight)};
+
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const MenuItems = styled.ul`
+  position: relative;
+  height: ${(props) => props.theme.navHeight};
+  background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 10 rem;
 `;
 
 const MenuBtn = styled.li`
@@ -34,34 +49,23 @@ const MenuBtn = styled.li`
   cursor: pointer;
 `;
 
-const MenuItems = styled.ul`
-  position: relative;
-  height: ${(props) => props.theme.navHeight};
-  background-color: ${(props) => props.theme.body};
-  color: ${(props) => props.theme.text};
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding: 0 10 rem;
-`;
-
 const MenuItem = styled.li`
   text-transform: uppercase;
   color: ${(props) => props.theme.text};
 `;
 
 export const NavBar = () => {
+  const [click, setClick] = useState(false);
+
   return (
     <div>
-      <NavContainer>
+      <NavContainer click={click}>
         <MenuItems>
-          <MenuBtn>Menu</MenuBtn>
+          <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
           <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Home</MenuItem>
+          <MenuItem>about</MenuItem>
+          <MenuItem>shop</MenuItem>
+          <MenuItem>new arrival</MenuItem>
         </MenuItems>
       </NavContainer>
     </div>
