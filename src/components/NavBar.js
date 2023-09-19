@@ -56,6 +56,10 @@ const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.text};
 `;
 
+const intemVariants = {
+  hidden: {},
+};
+
 export const NavBar = () => {
   const [click, setClick] = useState(false);
 
@@ -84,10 +88,30 @@ export const NavBar = () => {
           dragSnapToOrigin
         >
           <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>about</MenuItem>
-          <MenuItem>shop</MenuItem>
-          <MenuItem>new arrival</MenuItem>
+          <MenuItem
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9, Y: 0 }}
+          >
+            Home
+          </MenuItem>
+          <MenuItem
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9, Y: 0 }}
+          >
+            about
+          </MenuItem>
+          <MenuItem
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9, Y: 0 }}
+          >
+            shop
+          </MenuItem>
+          <MenuItem
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9, Y: 0 }}
+          >
+            new arrival
+          </MenuItem>
         </MenuItems>
       </NavContainer>
     </div>
