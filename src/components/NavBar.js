@@ -56,10 +56,6 @@ const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.text};
 `;
 
-const intemVariants = {
-  hidden: {},
-};
-
 export const NavBar = () => {
   const [click, setClick] = useState(false);
 
